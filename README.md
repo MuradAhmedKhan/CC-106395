@@ -3,6 +3,6 @@
 StdID | Name
 ------------ | -------------
 *63093* | *Murad Ahmed Khan* <!--this is the group leader in bold-->
- | Yousuf Muhammad Khan
+62914 | Afifa Jamil
 ## Description ##
 This repository contains assignments and project submitted to CC course offered in Spring 2021 at PafKiet.
