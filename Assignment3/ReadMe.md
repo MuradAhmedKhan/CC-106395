@@ -11,3 +11,5 @@ StdID | Name
 #### REGULAR EXPRESSION FOR THAT TYPE OF STRING: (a+b)(a+b+0+1+.+_)*@(a+b+0+1+.)*
 
 #### NFA ScreenShot FOR R.E ####
+
+![Boossto](https://user-images.githubusercontent.com/54790523/107608971-719b4600-6c35-11eb-9ad8-5a4e78d47977.PNG)
