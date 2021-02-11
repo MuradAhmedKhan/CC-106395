@@ -43,51 +43,97 @@ https://user-images.githubusercontent.com/54790523/107641125-0719f280-6c95-11eb-
 ### CODE OF THE PROGRAM ###
 
 bool check = false;
-            string input_text = textBox1.Text;
-            if (input_text[0] == 'a' || input_text[0]== 'b' )
-            {
-                for (int i = 1; i < input_text.Length; i++)
-                {
-                    if (input_text[i] != '@')
-                    {
-                        if ( input_text[i] == 'a' || input_text[i] == 'b' || input_text[i] == '0' || input_text[i] == '1' || input_text[i] == '.' || input_text[i] == '_'  )
-                        {
-                            check = true;
-                        }
-                        else
-                        {
-                            check = false;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        for (int j = i+1; j < input_text.Length; j++)
-                        {
-                            if (input_text[j] == 'a' || input_text[j] == 'b' || input_text[j] == '0' || input_text[j] == '1' || input_text[j] == '.' || input_text[j].ToString() == "")
-                            {
-                                check = true;
-                            }
-                            else
-                            {
-                                check = false;
-                                break;
-                            }
-                        }
-                    }
-                }
-                //MessageBox.Show("Valid String");
-            }
-            else
-            {
-                check = false;
-            }
 
-            if (check)
-            {
-                MessageBox.Show("Valid String");
-            }
-            else
-            {
-                MessageBox.Show("Invalid String");
-            }
+string input_text = textBox1.Text;
+
+if (input_text[0] == 'a' || input_text[0]== 'b' )
+
+{
+
+for (int i = 1; i < input_text.Length; i++)
+
+{
+
+if (input_text[i] != '@')
+
+{
+
+if ( input_text[i] == 'a' || input_text[i] == 'b' || input_text[i] == '0' || input_text[i] == '1' || input_text[i] == '.' || input_text[i] == '_'  )
+
+{
+
+check = true;
+
+}
+
+else
+
+{
+
+check = false;
+
+break;
+
+}
+
+}
+
+else
+
+{
+
+for (int j = i+1; j < input_text.Length; j++)
+
+{
+
+if (input_text[j] == 'a' || input_text[j] == 'b' || input_text[j] == '0' || input_text[j] == '1' || input_text[j] == '.' || input_text[j].ToString() == "")
+
+{
+
+check = true;
+
+}
+
+else
+
+{
+
+check = false;
+
+break;
+
+}
+
+}
+
+}
+
+}
+
+//MessageBox.Show("Valid String");
+
+}
+
+else
+
+{
+
+check = false;
+
+}
+
+if (check)
+
+{
+
+MessageBox.Show("Valid String");
+
+}
+
+else
+
+{
+
+MessageBox.Show("Invalid String");
+
+}
