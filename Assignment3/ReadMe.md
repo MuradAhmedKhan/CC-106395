@@ -1,3 +1,4 @@
+Assalam-o-Alaikum Sir meri invitation pta nahi q mere group partner k pass nahi jaarhi to isliye wo contributer me nahi lkn mjhy kaam krke deti hn to wo mai yhn daalta hoon
 ### MEMBERS ###
 StdID | Name
 ------------ | -------------
