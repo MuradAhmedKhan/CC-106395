@@ -33,3 +33,8 @@ StdID | Name
 | 31,34,35,23,24,25,26,27,28   | M         | K                            | L                            | M                            | N                            | -                            | O                            | -                         |
 | 32,34,35,23,24,25,26,27,28   | N         | K                            | L                            | M                            | N                            | -                            | O                            | -                         |
 | 33,34,35,23,24,25,26,27,28   | O         | K                            | L                            | M                            | N                            | -                            | O                            | -                         |
+
+
+Code According to the RE
+
+https://user-images.githubusercontent.com/54790523/107641125-0719f280-6c95-11eb-9fca-8fd495636804.mp4
