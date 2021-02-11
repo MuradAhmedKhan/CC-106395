@@ -12,4 +12,4 @@ StdID | Name
 
 #### NFA ScreenShot FOR R.E ####
 
-![Boossto](https://user-images.githubusercontent.com/54790523/107608971-719b4600-6c35-11eb-9ad8-5a4e78d47977.PNG)
+![NFA Class Activity](https://user-images.githubusercontent.com/54790523/107609242-4b29da80-6c36-11eb-9149-26cd0eb04ef0.jpg)
