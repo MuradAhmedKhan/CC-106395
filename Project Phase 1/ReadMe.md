@@ -6,4 +6,17 @@ StdID | Name
 
 ### Language Selection ###
 
-## Mini C ##
+Mini C
+
+### Code Example ###
+int main(){
+
+}
+
+### Lexical Specification ###
+
+IF ELSE{
+} ID := (LETTER|"_") + (LETTER|"_"|DIGIT)* REAL :=
+
+### Language CFG ###
+PROG -> LIB FUNCTION | ;
