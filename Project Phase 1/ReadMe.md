@@ -19,4 +19,4 @@ IF ELSE{
 } ID := (LETTER|"_") + (LETTER|"_"|DIGIT)* REAL :=
 
 ### Language CFG ###
-PROG -> LIB FUNCTION | ;
+PROG -> LIB FUNCTION |;
