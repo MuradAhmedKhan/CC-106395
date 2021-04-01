@@ -9,12 +9,12 @@ StdID | Name
 Mini C
 
 ### Code Example ###
+
 ...
 
 int main(){
 
 }
-
 ...
 
 ### Lexical Specification ###
