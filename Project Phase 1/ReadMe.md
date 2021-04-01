@@ -14,6 +14,7 @@ Mini C
 int main(){
 
 }
+
 ...
 
 ### Lexical Specification ###
