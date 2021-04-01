@@ -8,14 +8,12 @@ StdID | Name
 
 Mini C
 
-### Code Example ###
-
-...
-
+## Code Example ##
+```
 int main(){
 
 }
-...
+```
 
 ### Lexical Specification ###
 
