@@ -10,6 +10,7 @@ Mini C
 
 ### Code Example ###
 ...
+
 int main(){
 
 }
