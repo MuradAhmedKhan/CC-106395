@@ -2,5 +2,5 @@
 ### PROJECT MEMBERS ###
 StdID | Name
 ------------ | -------------
-*63093* | *Murad Ahmed Khan* <!--this is the group leader in bold-->
+**63093** | **Murad Ahmed Khan** <!--this is the group leader in bold-->
 62914 | Afifa Jamil
