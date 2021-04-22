@@ -8,7 +8,7 @@ StdID | Name
 
 #### Given:  Alphabet = {'a', 'b', '0', '1', '.', '_', '@'}
 
-#### REGULAR EXPRESSION FOR THAT TYPE OF STRING: (a+b)(a+b+0+1+.+_)* @ (a+b+0+1+.)*
+#### REGULAR EXPRESSION FOR THAT TYPE OF STRING IS: (a+b)(a+b+0+1+.+_)* @ (a+b+0+1+.)*
 
 #### NFA ScreenShot FOR R.E ####
 
@@ -110,7 +110,7 @@ break;
 
 }
 
-//MessageBox.Show("Valid String");
+//MessageBox.Show("This is Valid String");
 
 }
 
@@ -126,7 +126,7 @@ if (check)
 
 {
 
-MessageBox.Show("Valid String");
+MessageBox.Show("This is Valid String");
 
 }
 
@@ -134,6 +134,6 @@ else
 
 {
 
-MessageBox.Show("Invalid String");
+MessageBox.Show("This is Invalid String");
 
 }
