@@ -4,24 +4,19 @@ StdID | Name
 **63093** | **Murad Ahmed Khan** <!--Group Leader-->
 62914 | Afifa Jamil
 
-### Language Selection ###
+## Selected Language ##    
 
-Mini C
+Mini Java
 
-## Code Example ##
+## Some mini java code samples ##
+
+### Functions in java ###
+
 ```
-int main(){
+   class PrintHello {
+        public static void main() {
+                System.out.println("Simple Program for hello world");
+        }
+    }
 
-}
 ```
-
-### Lexical Specification ###
-
-IF 
-ELSE
-{
-} 
-ID := (LETTER|"_") + (LETTER|"_"|DIGIT)* REAL :=
-
-### Language CFG ###
-PROG -> LIB FUNCTION | ;
