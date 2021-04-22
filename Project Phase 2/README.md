@@ -1,4 +1,4 @@
-# CC 106395 Spring 2021: Project Phase #
+# CC 106395 Spring 2021: Project Phase 2 #
 ### PROJECT MEMBERS  ###
 StID | Name 
 ------------ | -------------
