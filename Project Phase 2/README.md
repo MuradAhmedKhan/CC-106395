@@ -84,7 +84,8 @@ do|while|switch {printf("\n %d Loop Statements:%s",Keyword,yytext);}
 
 int main()
 {
-  yylex();
+    yylex();
+
 }
 
 
