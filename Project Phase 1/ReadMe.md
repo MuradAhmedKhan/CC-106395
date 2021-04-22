@@ -66,3 +66,72 @@ for (int i = 0; i < 5; i++) {
   System.out.println(i);
 }
 ```
+
+
+##   Lexical Specifications Mini Java  ##   
+
+## **Grammar Notations in MiniJava:** ##
+```
+IDENTIFIER ::=  LETTER [[ LETTER ]]*
+NUMERAL ::=  DIGIT [[ DIGIT ]]*
+OPERATOR ::= + | ==
+LETTER ::= A | B | C | ... | Z
+NUMERAL ::= 0 | 1 | ... | 9
+
+Token
+Lexeme
+Value        {for integer tokens}
+ValueR       {for real tokens}
+Literal      {for quoted strings}
+```
+
+## Reserved Words ##
+Following are the reserved words
+```
+class, static, void, main, extends, return, true, int, boolean
+```
+    
+## Context_Free_Grammar (CFG) of MiniJava:
+```
+
+%%
+// second section
+
+%class Lexer
+%unicode
+%cup
+
+[..]
+
+LineTerminator = \r|\n|\r\n
+
+%%
+// third section
+
+/* keywords */
+<YYINITIAL> "abstract"           { return symbol(sym.ABSTRACT); }
+<YYINITIAL> "boolean"            { return symbol(sym.BOOLEAN); }
+BooleanLiteral :
+        t r u e
+        f a l s e
+<YYINITIAL> "break"              { return symbol(sym.BREAK); }
+
+<STRING> {
+  \"                             { yybegin(YYINITIAL); 
+                                   return symbol(sym.STRING_LITERAL, 
+                                   string.toString()); }
+ [..]
+}
+
+/* error fallback */
+[^]                              { throw new Error("Illegal character <"+
+                                                    yytext()+">"); }
+grammar simple;
+
+basic   : NAME ':' NAME ;
+
+NAME    : [a-zA-Z]* ;
+
+COMMENT : '/*' .*? '*/' -> skip ;
+
+```
