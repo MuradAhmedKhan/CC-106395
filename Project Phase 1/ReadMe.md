@@ -93,6 +93,15 @@ class, static, void, main, extends, return, true, int, boolean
     
 ## Context_Free_Grammar (CFG) of MiniJava:
 ```
+FloatingPointLiteral = DIGIT+ '.' DIGIT+
+StringLiteral = '"' (CHAR | '\"')* '"'
+BooleanLiteral = 'true' | 'false'
+SEMI = ';'
+ID = (LETTER | '_') (LETTER | DIGIT | '_')*
+DIGIT = '0' | ... | '9'
+LETTER = 'a' | ... | 'z' | 'A' | ... | 'Z'
+CHAR = <unicode character in Java>
+Whitespace characters (' ', '\t', '\r', '\n') are skipped outside of tokens.
 
 %%
 // second section
