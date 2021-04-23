@@ -9,15 +9,67 @@ StdID | Name
 ## Project Description ##
 Replace this text with the description of your project. Tell what the project was about. What you aimed to deliver in the project.
 
-##Sample Language Used ##
-Replace this text with the desription of what was your sample language. You may include some code examples of loops, if and simple statements
-```C++
-#include <some code examples.h>
-printf("This is a loop example!");
-for(int i=0; i<10 ; i++){
-    printf("Please Allah Forgive me. I cheated in exam while fasting!");
+## Sample Code of Mini Java ##
+
+### Functions in Mini java ###
+
+```
+   class PrintHello {
+        public static void main() {
+                System.out.println("Simple Program for hello world");
+        }
+    }
+
+```
+
+
+### Calling Function in Mini Java ###
+
+```
+parseA() {
+    if (theToken == 'a') {accept('a'); accept('a');}
+    else error()
+}
+
+parseStart() {
+    if (theToken=='a') {
+       accept('a');
+       parseA();
+    }
+```
+
+### Variables Declaration in Mini Java ###
+
+```
+   int A = 7; //This the variable initialization of integer type
+
+```
+
+### If/else Statements ### 
+
+```
+    if (theString == 'a') {accept('a');}
+
+```
+
+### Arrays ###
+
+```
+    int [] a;   //local variable 
+    a = new int [76];
+    a[0] = 7;
+    a[2] = 77;
+```
+
+### For Loops ###
+```
+for (int i = 0; i < 5; i++) {
+  System.out.println(i);
 }
 ```
+
+
+
 ###Lexical Specification###
 Replace this text with a complete lexical specification of your selected programming language.
 
