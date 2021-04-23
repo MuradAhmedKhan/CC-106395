@@ -8,9 +8,9 @@ StID | Name
 
 ## Lexical Specification ##
 
-There are some lexical specifications in Mini java which are given below:
+There are the some lexical specifications in the Mini java which are given below:
 
-**White Space**, new line, carriage return, and tabulator are examples of white space.
+**White Space**, new line, carriage return, and tabulator are the examples of white space.
 
 A numeric **integer literals** are from any number in between 1 to 9, the length of integer literals doesn't matter, but the end must also in between 0 to 9. And one more thing and that is we can use 0 as an integeral literal.
 
