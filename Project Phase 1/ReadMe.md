@@ -21,7 +21,6 @@ Mini Java
 
 ```
 
-
 ### Calling Function in Mini Java ###
 
 ```
