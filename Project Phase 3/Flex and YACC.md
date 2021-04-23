@@ -10,10 +10,10 @@ A parser is a compiler or interpreter component that breaks data into smaller el
 
 A parser's main purpose is to determine if input data may be derived from the start symbol of the grammar. If yes, then in what ways can this input data be derived? This is achieved as follows:
 
-## Top-Down Parsing ## 
+#### Top-Down Parsing #### 
 
 Involves searching a parse tree to find the left-most derivations of an input stream by using a top-down expansion. Parsing begins with the start symbol which is transformed into the input symbol until all symbols are translated and a parse tree for an input string is constructed. Examples include LL parsers and recursive-descent parsers. Top-down parsing is also called predictive parsing or recursive parsing.
 
-## Bottom-Up Parsing ##
+#### Bottom-Up Parsing ####
 
 Involves rewriting the input back to the start symbol. It acts in reverse by tracing out the rightmost derivation of a string until the parse tree is constructed up to the start symbol This type of parsing is also known as shift-reduce parsing. One example is an LR parser.
