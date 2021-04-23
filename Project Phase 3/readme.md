@@ -95,16 +95,6 @@ class INS{
 }
 ```
 
-## Lexical Specification ##
-
-There are some lexical specifications in Mini java which are given below:
-
-**White Space**, new line, carriage return, and tabulator are examples of white space.
-
-A numeric **integer literals** are from any number in between 1 to 9, the length of integer literals doesn't matter, but the end must also in between 0 to 9. And one more thing and that is we can use 0 as an integeral literal.
-
-An **identifiers** are basically strings which can be start with any letter, underscore and even digits. Moreover Identifiers are not the keywords, it's a string which names depends upon the user's wish.
-
 # LEXICAL TOKENS #
 
 ### This tokens are might be Identifiers, Literals and Operators ###
