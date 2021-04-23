@@ -160,67 +160,119 @@ int main()
 
 ## **Grammar in MiniJava:** ##
 ```
-IDENTIFIER ::=  LETTER [[ LETTER ]]*
-NUMERAL ::=  DIGIT [[ DIGIT ]]*
-OPERATOR ::= + | ==
-LETTER ::= A | B | C | ... | Z
-NUMERAL ::= 0 | 1 | ... | 9
+goal : mainclass classdecs          
+     ;
 
-Token
-Lexeme
-Value        {for integer tokens}
-ValueR       {for real tokens}
-Literal      {for quoted strings}
+mainclass : CLASS ID '{' VOID ID '(' ID ARR ID ')' '{' blockstmts '}' '}' 
+          ;
 
-FloatingPointLiteral = DIGIT+ '.' DIGIT+
-StringLiteral = '"' (CHAR | '\"')* '"'
-BooleanLiteral = 'true' | 'false'
-SEMI = ';'
-ID = (LETTER | '_') (LETTER | DIGIT | '_')*
-DIGIT = '0' | ... | '9'
-LETTER = 'a' | ... | 'z' | 'A' | ... | 'Z'
-CHAR = <unicode character in Java>
-Whitespace characters (' ', '\t', '\r', '\n') are skipped outside of tokens.
+classdecs : classdec classdecs      
+          |                         
+          ;
 
-%%
-// second section
+classdec : CLASS ID extendsopt '{' classmembers '}' 
+         ;
 
-%class Lexer
-%unicode
-%cup
+classmembers : vardec classmembers 
+             | methoddec classmembers 
+             |                      
+             ;
 
-[..]
+vardec : type ID ';'                
+       | type ID '=' expr ';'       
+       ;
 
-LineTerminator = \r|\n|\r\n
+methoddec : type ID '(' params ')' '{' blockstmts '}'
+          ;
 
-%%
-// third section
+params : param paramsrest           
+       |                            
+       ;
 
-/* keywords */
-<YYINITIAL> "abstract"           { return symbol(sym.ABSTRACT); }
-<YYINITIAL> "boolean"            { return symbol(sym.BOOLEAN); }
-BooleanLiteral :
-        t r u e
-        f a l s e
-<YYINITIAL> "break"              { return symbol(sym.BREAK); }
+paramsrest : ',' param paramsrest   
+           |                        
+           ;
 
-<STRING> {
-  \"                             { yybegin(YYINITIAL); 
-                                   return symbol(sym.STRING_LITERAL, 
-                                   string.toString()); }
- [..]
-}
+param : type ID                     
+      ;
 
-/* error fallback */
-[^]                              { throw new Error("Illegal character <"+
-                                                    yytext()+">"); }
-grammar simple;
+extendsopt : EXTENDS ID             
+           |                        
+           ;
 
-basic   : NAME ':' NAME ;
 
-NAME    : [a-zA-Z]* ;
+blockstmts : vardec blockstmts      
+           | stmt blockstmts        
+           |                        
+           ;
 
-COMMENT : '/*' .*? '*/' -> skip ;
+stmt : '{' blockstmts '}'                             
+     | IF '(' expr ')' stmt %prec PREC_ELSELESS_IF    
+     | IF '(' expr ')' stmt ELSE stmt                 
+     | WHILE '(' expr ')' stmt                        
+     | expr '=' expr ';'                              
+     | CONTINUE ';'                                   
+     | BREAK ';'                                      
+     | RETURN expr ';'                                
+     | RETURN ';'                                     
+     | expr '.' ID '(' exprlistopt ')'  ';'           
+     | ';'                                            
+     ;
+
+expr : expr '>' expr          
+     | expr '<' expr           
+     | expr GREAT_EQ expr      
+     | expr LESS_EQ expr       
+     | expr EQ expr            
+     | expr DIFF expr          
+     | expr OR expr            
+     | expr AND expr           
+     | expr '+' expr           
+     | expr '-' expr           
+     | expr '/' expr           
+     | expr '*' expr           
+     | expr '%' expr           
+     | object filledbracks     
+     | LIT_INT                
+     | LIT_STR                
+     | TRUE                   
+     | FALSE                  
+     | TOK_NULL               
+     | object                 
+     | '-' expr %prec PREC_UNARY_OP  
+     | '!' expr %prec PREC_UNARY_OP   
+     ;
+
+type : type ARR 
+     | BOOLEAN  
+     | INT      
+     | VOID     
+     | ID       
+     ;
+
+object : NEW type                         
+       | NEW ID '(' exprlistopt ')'       
+       | ID                               
+       | THIS_DOT ID                      
+       | THIS                             
+       | expr '.' ID '(' exprlistopt ')'  
+       | '(' expr ')'                     
+       | '{' exprlist '}'                 
+       ;
+
+exprlist : expr ',' exprlist  
+         | expr               
+         ;
+
+exprlistopt : exprlist  
+            |           
+            ;
+
+
+filledbracks : filledbracks '[' expr ']'  
+             | '[' expr ']'               
+             ;
+
 
 ```
 
