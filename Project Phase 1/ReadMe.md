@@ -67,7 +67,6 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
-
 ##   Lexical Specifications Mini Java  ##   
 
 ## **Grammar Notations in MiniJava:** ##
