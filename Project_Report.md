@@ -1,11 +1,11 @@
-#CC 106395: Mini Java#
+# CC 106395: Mini Java #
 
-###PROJECT MEMBERS###
+### PROJECT MEMBERS ###
 StdID | Name
 ------------ | -------------
-**63093** | **Murad Ahmed Khan** <!--this is the group leader in bold-->
-3421 | Afifa
-<!-- Replace name and student ids with acutal group member names and ids-->
+**63093** | **Murad Ahmed Khan** 
+62914 | Afifa
+
 ## Project Description ##
 Replace this text with the description of your project. Tell what the project was about. What you aimed to deliver in the project.
 
@@ -29,13 +29,12 @@ Replace this text with a complete GRAMMAR of your selected language
 How you handled the tasks that were given? How your program works? What will you have to do to translate the program to C# code?
 
 ##Problems Faced##
-Replace this text with the explaination of the problems you faced in the project, and how you resolved them. Again you can give each of your problems a heading of level 3.
+There are lots of problems that we faced, lots of new platforms, new things, new languages that we never learn before. So, we decided to solve those problems by research, learn about that problems and language.
 
-###Problem 1: I don't know how to Code###
-Transfer yourself to social sciences department. Blah blah blah. This is an example. Replace it with your own problem description and how you resolved it.
-Don't just blindly copy paste this report. This is a sample template file.
+### Problem 1: I don't know how to Code in Mini Java ###
+Me and my group partner both of us didn't have any idea of mini Java before this course. We are familiar with C#. We mostly do code in C# language so that made a problem that we faced.
 
-###Problem 2: My Parents forced me for a degree###
+### Problem 2: My Parents forced me for a degree ###
 If you were not able to convince your parents not to force you for degree and now you are doing it for them, then do it with your best effort and not half heartedly. There is no point wasting this time with finding a loop hole here and there and passing courses without actually learning anything.
 
 ###Problem 3: My girlfriend's father won't let me marry her unless I've a degree###
