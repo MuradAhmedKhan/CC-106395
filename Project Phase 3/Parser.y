@@ -122,7 +122,7 @@ Expression
     ;
 
 Identifier: Id
-          | Statement {yyerror ("Syntax Error\n"); YYABORT; }
+          | Statement {yyerror ("Something is wrong with the syntax\n"); YYABORT; }
     ;
 
 %%
