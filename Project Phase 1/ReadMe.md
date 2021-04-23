@@ -133,7 +133,7 @@ BooleanLiteral :
 
 /* error fallback */
 [^]                              { throw new Error("Illegal character <"+
-                                                    yytext()+">"); }
+                                                   yytext()+">"); }
 grammar simple;
 
 basic   : NAME ':' NAME ;
