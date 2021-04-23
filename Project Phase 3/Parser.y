@@ -10,19 +10,20 @@ int yylex(void);
 void yyerror(char *s);
 %}
 
-%token If Else While Class Extends Public Static Void
 %token Boolean Integer String True False
 %token This New Println Return ArrayLength Main
 %token Id Number And
+%token If Else While Class Extends Public Static Void
 
 
+
+%left '+' '-'
+%left '*'
+%left '.'
 %right '='
 %left '{'
 %left '['
 %left And
-%left '+' '-'
-%left '*'
-%left '.'
 %left '!'
 %nonassoc '<'
 
@@ -30,7 +31,7 @@ void yyerror(char *s);
 
 %%
 Goal
-    :   MainClass ClassDeclarationList      { printf("OK this is the valid expression\n"); YYACCEPT; }
+    :   MainClass ClassDeclarationList      { printf("Your Given Expression is valid\n"); YYACCEPT; }
     ;
 
 MainClass
