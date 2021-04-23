@@ -70,11 +70,11 @@ for (int i = 0; i < 5; i++) {
 
 
 
-###Lexical Specification###
-Replace this text with a complete lexical specification of your selected programming language.
+### Lexical Specification ###
 
-###Grammar###
-## **Grammar Notations in MiniJava:** ##
+
+
+## **Grammar in MiniJava:** ##
 ```
 IDENTIFIER ::=  LETTER [[ LETTER ]]*
 NUMERAL ::=  DIGIT [[ DIGIT ]]*
@@ -88,10 +88,59 @@ Value        {for integer tokens}
 ValueR       {for real tokens}
 Literal      {for quoted strings}
 
+FloatingPointLiteral = DIGIT+ '.' DIGIT+
+StringLiteral = '"' (CHAR | '\"')* '"'
+BooleanLiteral = 'true' | 'false'
+SEMI = ';'
+ID = (LETTER | '_') (LETTER | DIGIT | '_')*
+DIGIT = '0' | ... | '9'
+LETTER = 'a' | ... | 'z' | 'A' | ... | 'Z'
+CHAR = <unicode character in Java>
+Whitespace characters (' ', '\t', '\r', '\n') are skipped outside of tokens.
+
+%%
+// second section
+
+%class Lexer
+%unicode
+%cup
+
+[..]
+
+LineTerminator = \r|\n|\r\n
+
+%%
+// third section
+
+/* keywords */
+<YYINITIAL> "abstract"           { return symbol(sym.ABSTRACT); }
+<YYINITIAL> "boolean"            { return symbol(sym.BOOLEAN); }
+BooleanLiteral :
+        t r u e
+        f a l s e
+<YYINITIAL> "break"              { return symbol(sym.BREAK); }
+
+<STRING> {
+  \"                             { yybegin(YYINITIAL); 
+                                   return symbol(sym.STRING_LITERAL, 
+                                   string.toString()); }
+ [..]
+}
+
+/* error fallback */
+[^]                              { throw new Error("Illegal character <"+
+                                                    yytext()+">"); }
+grammar simple;
+
+basic   : NAME ':' NAME ;
+
+NAME    : [a-zA-Z]* ;
+
+COMMENT : '/*' .*? '*/' -> skip ;
 
 ```
 
-### Approach ###
+### Approaches ###
 
 New Approach that we learn are gievn below:
 - Linux Terminal
