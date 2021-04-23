@@ -6,7 +6,7 @@ StdID | Name
 
 ## Selected Language ##    
 
-Mini Java
+Selected language is Mini Java
 
 ## Some mini java code samples ##
 
