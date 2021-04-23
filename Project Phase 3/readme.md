@@ -5,16 +5,105 @@ StID | Name
 **63093** | **Murad Ahmed Khan** <!--this is the group leader in bold-->
 62914 | Afifa Jamil
 
+## Code Example of InsertionSort in Mini Java ##
+
+```
+class InsertionSort{
+    public static void main(String[] a){
+	System.out.println(new INS().Sortion(15));
+    }
+}
+//The below code will sort the array of integer and print the array
+class INS{
+    
+    int[] numbers ;
+    int arrsize ;
+
+    public int Sortion(int b){
+	int aux01 ;
+	aux01 = this.Init(b);
+	aux01 = this.Print();
+	System.out.println(99999);
+	aux01 = this.Sort();
+	aux01 = this.Print();
+	return 0 ;
+    }
+
+    public int Sort(){
+	int nt ;
+	int i ;
+	int aux02 ;
+	int aux04 ;
+	int aux05 ;
+	int aux06 ;
+	int aux07 ;
+	int j ;
+	int t ;
+	i = size - 1 ;
+	aux02 = 0 - 1 ;
+	while (aux02 < i) {
+	    j = 1 ;
+	    //aux03 = i+1 ;
+	    while (j < (i+1)){
+		aux07 = j - 1 ;
+		aux04 = number[aux07] ;
+		aux05 = number[j] ;
+		if (aux05 < aux04) {
+		    aux06 = j - 1 ;
+		    t = number[aux06] ;
+		    number[aux06] = number[j] ;
+		    number[j] = t;
+		}
+		else nt = 0 ;
+		j = j + 1 ;
+	    }
+	    i = i - 1 ;
+	}
+	return 0 ;
+    }
+
+    // Printing
+    public int Print(){
+	int j ;
+	j = 0 ;
+	while (j < (size)) {
+	    System.out.println(number[j]);
+	    j = j + 1 ;
+	}
+	return 0 ;
+    }
+    
+    // Initializing array of integers
+    public int Init(int b){
+	size = b ;
+	number = new int[b] ;
+	
+	number[0] = 4 ;
+	number[1] = 20  ; 
+	number[2] = 12 ;
+	number[3] = 16 ;
+	number[4] = 10 ; 
+	number[5] = 1 ;
+	number[6] = 6  ; 
+	number[7] = 9  ; 
+	number[8] = 2 ; 
+	number[9] = 5  ;
+	
+	return 0 ;	
+    }
+
+}
+```
 
 ## Lexical Specification ##
 
 There are some lexical specifications in Mini java which are given below:
 
-*White Space*, new line, carriage return, and tabulator are examples of white space.
+**White Space**, new line, carriage return, and tabulator are examples of white space.
 
-A numeric *integer literals* are from any number in between 1 to 9, the length of integer literals doesn't matter, but the end must also in between 0 to 9. And one more thing and that is we can use 0 as an integeral literal.
+A numeric **integer literals** are from any number in between 1 to 9, the length of integer literals doesn't matter, but the end must also in between 0 to 9. And one more thing and that is we can use 0 as an integeral literal.
 
-An *identifiers* are basically strings which can be start with any letter, underscore and even digits. Moreover Identifiers are not the keywords, it's a string which names depends upon the user's wish.
+An **identifiers** are basically strings which can be start with any letter, underscore and even digits. Moreover Identifiers are not the keywords, it's a string which names depends upon the user's wish.
 
 # LEXICAL TOKENS #
 
