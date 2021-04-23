@@ -108,7 +108,7 @@ class INS{
 
 # LEXICAL TOKENS #
 
-### This tokens are might be Identifiers, Literals and Operators ###
+### This tokens are might be the Identifiers, Literals and the Operators ###
 
 NUMBER =""
 
