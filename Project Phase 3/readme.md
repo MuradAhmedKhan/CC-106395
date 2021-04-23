@@ -193,105 +193,121 @@ WHITESPEACES = " "
 
 ### Grammar ###
 
-Program → ClassDeclaration*
+```
+goal : mainclass classdecs          
+     ;
 
-ClassDeclaration → class IDENT(extends IDENT)? { ClassMember * }
+mainclass : CLASS ID '{' VOID ID '(' ID ARR ID ')' '{' blockstmts '}' '}' 
+          ;
 
-ClassMember → Field | Method | MainMethod
+classdecs : classdec classdecs      
+          |                         
+          ;
 
-Field → public Type IDENT ;
+classdec : CLASS ID extendsopt '{' classmembers '}' 
+         ;
 
-MainMethod → public static void main ( String [ ] IDENT ) Block
+classmembers : vardec classmembers 
+             | methoddec classmembers 
+             |                      
+             ;
 
-Method → public Type IDENT ( Parameters? ) Block
+vardec : type ID ';'                
+       | type ID '=' expr ';'       
+       ;
 
-Parameters → Parameter | Parameter , Parameters
+methoddec : type ID '(' params ')' '{' blockstmts '}'
+          ;
 
-Parameter → Type IDENT
+params : param paramsrest           
+       |                            
+       ;
 
-Type → int | boolean | void | IDENT
+paramsrest : ',' param paramsrest   
+           |                        
+           ;
 
-Statement → Block
+param : type ID                     
+      ;
 
-| EmptyStatement
+extendsopt : EXTENDS ID             
+           |                        
+           ;
 
-| IfStatement
 
-PrintStatement
+blockstmts : vardec blockstmts      
+           | stmt blockstmts        
+           |                        
+           ;
 
-| ExpressionStatement
+stmt : '{' blockstmts '}'                             
+     | IF '(' expr ')' stmt %prec PREC_ELSELESS_IF    
+     | IF '(' expr ')' stmt ELSE stmt                 
+     | WHILE '(' expr ')' stmt                        
+     | expr '=' expr ';'                              
+     | CONTINUE ';'                                   
+     | BREAK ';'                                      
+     | RETURN expr ';'                                
+     | RETURN ';'                                     
+     | expr '.' ID '(' exprlistopt ')'  ';'           
+     | ';'                                            
+     ;
 
-| WhileStatement
+expr : expr '>' expr          
+     | expr '<' expr           
+     | expr GREAT_EQ expr      
+     | expr LESS_EQ expr       
+     | expr EQ expr            
+     | expr DIFF expr          
+     | expr OR expr            
+     | expr AND expr           
+     | expr '+' expr           
+     | expr '-' expr           
+     | expr '/' expr           
+     | expr '*' expr           
+     | expr '%' expr           
+     | object filledbracks     
+     | LIT_INT                
+     | LIT_STR                
+     | TRUE                   
+     | FALSE                  
+     | TOK_NULL               
+     | object                 
+     | '-' expr %prec PREC_UNARY_OP  
+     | '!' expr %prec PREC_UNARY_OP   
+     ;
 
-| ReturnStatement
+type : type ARR 
+     | BOOLEAN  
+     | INT      
+     | VOID     
+     | ID       
+     ;
 
-Block → { BlockStatement* }
+object : NEW type                         
+       | NEW ID '(' exprlistopt ')'       
+       | ID                               
+       | THIS_DOT ID                      
+       | THIS                             
+       | expr '.' ID '(' exprlistopt ')'  
+       | '(' expr ')'                     
+       | '{' exprlist '}'                 
+       ;
 
-BlockStatement → Statement | LocalVariableDeclarationStatement
+exprlist : expr ',' exprlist  
+         | expr               
+         ;
 
-LocalVariableDeclarationStatement → Type IDENT(= Expression)? ;
+exprlistopt : exprlist  
+            |           
+            ;
 
-EmptyStatement → ;
 
-WhileStatement → while ( Expression ) Statement
+filledbracks : filledbracks '[' expr ']'  
+             | '[' expr ']'               
+             ;
 
-IfStatement → if ( Expression ) Statement(else Statement)?
-
-PrintStatement → PrintStatementHead . println ( Expression ) ;
-
-PrintStatementHead → ( PrintStatementHead ) | System . out
-
-ExpressionStatement → Expression ;
-
-ReturnStatement → return Expression? ;
-
-Expression → AssignmentExpression
-
-AssignmentExpression → LogicalOrExpression(= AssignmentExpression)?
-
-LogicalOrExpression → (LogicalOrExpression ||)? LogicalAndExpression
-
-LogicalAndExpression → (LogicalAndExpression &&)? EqualityExpression
-
-EqualityExpression → (EqualityExpression(== | !=))? RelationalExpression
-
-RelationalExpression → (RelationalExpression(< | <= | > | >=))?
-
-AdditiveExpression → (AdditiveExpression(+ | -))?
-
-MultiplicativeExpression → (MultiplicativeExpression(* | / | %))?
-
-UnaryExpression → PrimaryExpression | (! | -)
-
-PrimaryExpression → null
-
-| false
-
-| true
-
-| INTEGER_LITERAL
-
-| MethodInvocationExpression
-
-| FieldAccessExpression
-
-| LocalVariableReferenceExpression
-
-| this
-
-| ( Expression )
-
-| NewObjectExpression
-
-MethodInvocationExpression → (PrimaryExpression .)?    IDENT(ExpressionList?)
-
-ExpressionList → Expression(, Expression)\*
-
-FieldAccessExpression → (PrimaryExpression .)?  IDENT
-
-LocalVariableReferenceExpression → IDENT
-
-NewObjectExpression → new IDENT ( )
+```
 
 ## References ##
 
