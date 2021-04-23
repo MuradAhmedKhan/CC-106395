@@ -25,7 +25,7 @@ class InsertionSort{
     }
 }
 //The below code will sort the array of integer and print the array
-class INS{
+class INS {
     
     int[] numbers ;
     int arrsize ;
