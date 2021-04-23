@@ -105,17 +105,13 @@ There are lots of problems that we faced, lots of new platforms, new things, new
 ### Problem 1: I don't know how to Code in Mini Java ###
 Me and my group partner both of us didn't have any idea of mini Java before this course. We are familiar with C#. We mostly do code in C# language so that made a problem that we faced.
 
-### Problem 2: My Parents forced me for a degree ###
-If you were not able to convince your parents not to force you for degree and now you are doing it for them, then do it with your best effort and not half heartedly. There is no point wasting this time with finding a loop hole here and there and passing courses without actually learning anything.
+### Problem 3: Don't Familiar with Github ###
+GitHub is one the problem we faced because me and my group partner was new with github so, we didn't know how to create repository, how to invite collaborator, what format of .md file and how to insert images, videos making heading and bullet points on .md file.
 
-###Problem 3: My girlfriend's father won't let me marry her unless I've a degree###
-Replace the heading and text of this to mention the problem you have faced in your project.
+### Problem 2: YACC ###
+That was the new platform so that's why lots of problems that we faced like Setting up, Compilation, How to work on it.
 
-##References##
-- Mention and add [links](https://guides.github.com/features/mastering-markdown/), references, books, research papers, code samples, you used to get help in the project.
-- Use bullets like this.
-- Mention all references. Plagiarism will not be tolerated.
-- You see markdown is not that difficult.
-- You are CS students not some tom harry from BBA SHE-B-A :-).
-- You can and must learn to use markdown and Github.
-- All future project development will be down in something similar to GITHUB
+
+## References ##
+- https://rosettacode.org/wiki/Compiler/lexical_analyzer
+- http://pld.cs.luc.edu/courses/388/mnotes/compiler.html
