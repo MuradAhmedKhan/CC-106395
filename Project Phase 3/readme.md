@@ -274,7 +274,7 @@ MethodInvocationExpression → (PrimaryExpression .)?    IDENT(ExpressionList?)
 
 ExpressionList → Expression(, Expression)\*
 
-FieldAccessExpression → (PrimaryExpression .)? IDENT
+FieldAccessExpression → (PrimaryExpression .)?  IDENT
 
 LocalVariableReferenceExpression → IDENT
 
