@@ -74,13 +74,32 @@ for (int i = 0; i < 5; i++) {
 Replace this text with a complete lexical specification of your selected programming language.
 
 ###Grammar###
-Replace this text with a complete GRAMMAR of your selected language
+## **Grammar Notations in MiniJava:** ##
+```
+IDENTIFIER ::=  LETTER [[ LETTER ]]*
+NUMERAL ::=  DIGIT [[ DIGIT ]]*
+OPERATOR ::= + | ==
+LETTER ::= A | B | C | ... | Z
+NUMERAL ::= 0 | 1 | ... | 9
+
+Token
+Lexeme
+Value        {for integer tokens}
+ValueR       {for real tokens}
+Literal      {for quoted strings}
 
 
-###Approach###
-How you handled the tasks that were given? How your program works? What will you have to do to translate the program to C# code?
+```
 
-##Problems Faced##
+### Approach ###
+
+New Approach that we learn are gievn below:
+- Linux Terminal
+- Flex
+- YACC
+- Mini Java
+
+## Problems Faced ##
 There are lots of problems that we faced, lots of new platforms, new things, new languages that we never learn before. So, we decided to solve those problems by research, learn about that problems and language.
 
 ### Problem 1: I don't know how to Code in Mini Java ###
